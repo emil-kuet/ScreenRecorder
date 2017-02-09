@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <manifest package="net.yrom.screenrecorder" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <!-- Google Play filtering -->
+
+
+    <uses-feature android:name="android.hardware.wifi.direct" android:required="true"/>
+
+    <!-- Include required permissions for Google Mobile Ads to run-->
+
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+
+    -<application android:theme="@android:style/Theme.Holo" android:label="@string/app_name" android:icon="@drawable/ic_launcher" android:allowBackup="true">
+
+    <!-- This meta-data tag is required to use Google Play Services. -->
+
+
+    <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+
+
+    -<activity android:name="net.yrom.screenrecorder.MainActivity" android:label="@string/app_name">
+
+
+    -<intent-filter>
+
+    <action android:name="android.intent.action.MAIN"/>
+
+    <category android:name="android.intent.category.LAUNCHER"/>
+
+</intent-filter>
+
+</activity>
+
+    <activity android:name="net.yrom.screenrecorder.WiFiDirectActivity" android:label="@string/app_name"> </activity>
+
+    <!-- Used for transferring files after a successful connection -->
+
+
+    <service android:name="net.yrom.screenrecorder.FileTransferService" android:enabled="true"/>
+
+    <service android:name="net.yrom.screenrecorder.WiFiClientIPTransferService" android:enabled="true"/>
+
+    <!--Include the AdActivity configChanges and theme. -->
+
+
+    <activity android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+
+</application>
+
+</manifest>
